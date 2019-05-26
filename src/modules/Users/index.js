@@ -3,6 +3,7 @@ import UsersController from './userController';
 
 const usersRouter = Router();
 
+
 usersRouter.post(
     '/users',
     UsersController.createUser

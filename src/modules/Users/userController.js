@@ -17,7 +17,7 @@ class UsersController{
         const userDetails = user.createUser(email,firstName, lastName, address, password);
 
         return res.status(201).json({
-            message: 'User sucessfully created',
+            status: 'User sucessfully created',
             userDetails
         });
     }
