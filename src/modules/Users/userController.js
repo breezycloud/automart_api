@@ -14,11 +14,11 @@ class UsersController{
             } 
         } = req;
 
-        const userDetails = user.createUser(email,firstName, lastName, address, password);
+        const data = user.createUser(email,firstName, lastName, address, password);
 
         return res.status(201).json({
             status: 'User sucessfully created',
-            userDetails
+            data
         });
     }
 }
