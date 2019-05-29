@@ -34,6 +34,10 @@ class User {
             }
         })
     }
+
+    getOne(email){
+        return this.users.find(u => u.email === email);        
+    }
 }
 
 export default User;

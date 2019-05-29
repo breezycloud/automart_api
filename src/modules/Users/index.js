@@ -9,4 +9,9 @@ usersRouter.post(
     UsersController.createUser
 );
 
+usersRouter.get(
+    '/users/:email',
+    UsersController.userSignIn
+);
+
 export default usersRouter;
