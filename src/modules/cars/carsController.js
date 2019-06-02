@@ -18,10 +18,22 @@ class CarsController{
 
         const data = cars.postAD(email, manufacturer, model, price, state, status);
 
-        return res.status(200).json({
-            status: 200,
-            data
-        });
+        return res.status(200).json({ status: 200, data });
+    }
+
+    static updateCarPrice(req, res)
+    {
+        const { id } = req.params;
+        const data = cars.cars.find(getCarId => getCarId.id == id);
+        if(data)
+        {
+            (data.price = req.body.new_price);
+            return res.status(200).json({ status: 200, data: data });            
+        }
+        else
+        {
+            return res.status(400).json({ status: 400 });
+        }
     }
 }
 

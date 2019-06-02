@@ -9,5 +9,9 @@ carsRouter.post(
     CarsController.postCarAd
 );
 
+carsRouter.patch(
+    '/car/:id',
+    CarsController.updateCarPrice
+);
 
 export default carsRouter;
