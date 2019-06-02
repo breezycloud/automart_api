@@ -9,5 +9,9 @@ orderRouter.post(
     OrdersController.purchaseOrder
 );
 
+orderRouter.patch(
+    '/order/:id',
+    OrdersController.updatePrice
+);
 
 export default orderRouter;

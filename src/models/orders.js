@@ -2,15 +2,17 @@ import moment from 'moment';
 
 class Orders{
     orders = [];
-    purchaseOrder(car_id, status, price, price_offered){
+    purchaseOrder(car_id, status, price, price_offered, old_price_offered, new_price_offered){
         const id = this.getNewId(this.orders);
         this.orders.push({
-            Id: id,
+            id: id,
             car_id,
             created_on: moment.now(),
             status,
             price,
-            price_offered
+            price_offered,
+            old_price_offered,
+            new_price_offered
         });
 
         const newOrder = this.orders[id - 1];
