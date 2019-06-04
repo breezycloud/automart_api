@@ -24,4 +24,19 @@ carsRouter.get(
     CarsController.viewSpecificCar
 );
 
+carsRouter.get(
+    '/car/unsold/:status',
+    CarsController.viewUnsoldCars
+);
+
+carsRouter.get(
+    '/car/unsold/:status',
+    CarsController.viewUnsoldCars
+);
+
+carsRouter.get(
+    '/car/range/:Min&:Max',
+    CarsController.viewCarsMinMax
+)
+
 export default carsRouter;

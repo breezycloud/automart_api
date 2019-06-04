@@ -64,6 +64,36 @@ class CarsController{
         }
     }
 
+    static viewUnsoldCars(req, res)
+    {
+        const { status } = req.params;
+        const data = cars.cars.filter(viewCars => viewCars.status == status);
+        if(data)
+        {
+            return res.status(200).json({ status: 200, data: data });            
+        }
+        else
+        {
+            return res.status(400).json({ status: 400, error: 'unable to fetch records' });
+        }
+    }
+
+    static viewCarsMinMax(req, res)
+    {
+        const { status } = req.params;
+        const { Min } = req.params;
+        const { Max } = req.params;
+        const data = cars.cars.filter(viewCars => viewCars.price <= Min && viewCars.price >= Max);
+        if(data)
+        {
+            return res.status(200).json({ status: 200, data: data });            
+        }
+        else
+        {
+            return res.status(400).json({ status: 400, error: 'unable to fetch records' });
+        }
+    }
+
 }
 
 export default CarsController;
