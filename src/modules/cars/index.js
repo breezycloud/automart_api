@@ -19,4 +19,9 @@ carsRouter.put(
     CarsController.updateCarStatus
 );
 
+carsRouter.get(
+    '/car/:id',
+    CarsController.viewSpecificCar
+);
+
 export default carsRouter;

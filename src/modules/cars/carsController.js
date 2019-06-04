@@ -50,6 +50,20 @@ class CarsController{
             return res.status(400).json({ status: 400, error: 'can find car id'});
         }
     }
+    static viewSpecificCar(req, res)
+    {
+        const { id } = req.params;
+        const data = cars.cars.find(viewCar => viewCar.id == id);        
+        if(data)
+        {            
+            return res.status(200).json({ status: 200, data: data});
+        }
+        else
+        {
+            return res.status(400).json({ status: 400, error: 'can not find car with that id' });
+        }
+    }
+
 }
 
 export default CarsController;
