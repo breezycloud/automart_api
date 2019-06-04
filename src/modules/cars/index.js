@@ -24,4 +24,9 @@ carsRouter.get(
     CarsController.viewSpecificCar
 );
 
+carsRouter.get(
+    '/car/unsold/:status',
+    CarsController.viewUnsoldCars
+);
+
 export default carsRouter;
