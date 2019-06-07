@@ -39,4 +39,9 @@ carsRouter.get(
     CarsController.viewCarsMinMax
 )
 
+carsRouter.delete(
+    '/car/:id',
+    CarsController.deleteCar
+);
+
 export default carsRouter;

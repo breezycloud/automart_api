@@ -25,6 +25,14 @@ class Cars{
             return 1
         }
     }
+
+    deleteCar(id)
+    {
+        const carData = this.cars.find(findCar => findCar.id == id);
+        const index = this.cars.indexOf(carData);
+        this.cars.splice(index, 1);
+        return {};
+    }
 }
 
 export default Cars;

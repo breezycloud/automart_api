@@ -94,6 +94,19 @@ class CarsController{
         }
     }
 
+    static deleteCar(req,res)
+    {
+        const car = cars.deleteCar(req.params.id);        
+        if(!car)        
+        {                    
+            return res.status(400).json({ status: 400, message: 'Invalid car id'});
+        }
+        else
+        {
+            return res.status(200).json({ status: 200, message: 'Car Ad successfully deleted'});
+        }
+    }
+
 }
 
 export default CarsController;
