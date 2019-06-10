@@ -19,4 +19,36 @@ carsRouter.put(
     CarsController.updateCarStatus
 );
 
+carsRouter.get(
+    '/car/:id',
+    CarsController.viewSpecificCar
+);
+
+carsRouter.get(
+    '/car/unsold/:status',
+    CarsController.viewUnsoldCars
+);
+
+carsRouter.get(
+    '/car/unsold/:status',
+    CarsController.viewUnsoldCars
+);
+
+carsRouter.get(
+    '/car/range/:Min&:Max',
+    CarsController.viewCarsMinMax
+)
+
+carsRouter.delete(
+    '/car/:id',
+    CarsController.deleteCar
+);
+
+carsRouter.get(
+    '/car/',
+    CarsController.viewAllCars
+);
+
+
+
 export default carsRouter;

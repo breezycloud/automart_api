@@ -50,6 +50,76 @@ class CarsController{
             return res.status(400).json({ status: 400, error: 'can find car id'});
         }
     }
+    static viewSpecificCar(req, res)
+    {
+        const { id } = req.params;
+        const data = cars.cars.find(viewCar => viewCar.id == id);        
+        if(data)
+        {            
+            return res.status(200).json({ status: 200, data: data});
+        }
+        else
+        {
+            return res.status(400).json({ status: 400, error: 'can not find car with that id' });
+        }
+    }
+
+    static viewUnsoldCars(req, res)
+    {
+        const { status } = req.params;
+        const data = cars.cars.filter(viewCars => viewCars.status == status);
+        if(data)
+        {
+            return res.status(200).json({ status: 200, data: data });            
+        }
+        else
+        {
+            return res.status(400).json({ status: 400, error: 'unable to fetch records' });
+        }
+    }
+
+    static viewCarsMinMax(req, res)
+    {
+        const { status } = req.params;
+        const { Min } = req.params;
+        const { Max } = req.params;
+        const data = cars.cars.filter(viewCars => viewCars.price <= Min && viewCars.price >= Max);
+        if(data)
+        {
+            return res.status(200).json({ status: 200, data: data });            
+        }
+        else
+        {
+            return res.status(400).json({ status: 400, error: 'unable to fetch records' });
+        }
+    }
+
+    static deleteCar(req,res)
+    {
+        const car = cars.deleteCar(req.params.id);        
+        if(!car)        
+        {                    
+            return res.status(400).json({ status: 400, message: 'Invalid car id'});
+        }
+        else
+        {
+            return res.status(200).json({ status: 200, message: 'Car Ad successfully deleted'});
+        }
+    }  
+
+    static viewAllCars(req, res)    
+    {
+        const data = cars.allCars();
+        if(data)
+        {
+            return res.status(200).json({ status: 200, data: data });
+        }
+        else
+        {                    
+            return res.status(400).json({ status: 400, message: 'Invalid car id'});
+        }
+    }
+
 }
 
 export default CarsController;
