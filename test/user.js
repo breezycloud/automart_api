@@ -35,7 +35,7 @@ describe('Users', function()
       chai.request('http://localhost:8000/')
       .get(`api/v1/users/${ email }`)
       .end((err, res) => {        
-        expect(res.statusCode).to.equal(200);   
+        expect(res.status).to.equal(200);   
         expect(res.body).to.be.an('array');                                
     });
     done();
