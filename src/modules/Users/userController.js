@@ -18,6 +18,7 @@ class UsersController{
 
         return res.status(200).json({
             status: 200,
+            message: 'User successfully created',
             data
         });
     }
@@ -27,6 +28,7 @@ class UsersController{
         if (data) {
           return res.status(200).json({
             status: 200,
+            message: 'User successfully logged in',
             data: data
           });
         } else {

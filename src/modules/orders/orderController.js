@@ -16,6 +16,7 @@ class OrderController{
 
         return res.status(200).json({
             status: 200,
+            message: 'Order successfully created',
             data: data
         });
     }
@@ -27,6 +28,7 @@ class OrderController{
           (data.old_price_offered = data.price_offered), (data.new_price_offered = req.body.new_price);
           return res.status(200).json({
             status: 200,
+            message: 'Order price successfully updated',
             data: 
             {
                id: data.id,

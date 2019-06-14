@@ -43,7 +43,7 @@ class CarsController{
         if(data)
         {
             (data.status = req.body.new_status);
-            return res.status(200).json({ status: 200, data: data});
+            return res.status(200).json({ status: 200, message: 'Car status updated' , data: data});
         }
         else
         {

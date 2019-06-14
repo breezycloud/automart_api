@@ -5,12 +5,12 @@ const usersRouter = Router();
 
 
 usersRouter.post(
-    '/users',
+    '/auth/signup',
     UsersController.createUser
 );
 
 usersRouter.get(
-    '/users/:email',
+    '/auth/signin/:email',
     UsersController.userSignIn
 );
 
